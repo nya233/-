@@ -1,0 +1,368 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+	 v2.0 | 20110126
+	 License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*下面是自己的样式*/
+body {
+	/*margin: 0 auto;*/
+	font-family: "Microsoft YaHei";
+}
+.clearfix::after {
+	content: "";
+	display: block;
+	height: 0;
+	overflow: hidden;
+	clear: both;
+}
+.clearfix {
+	*zoom: 1;	
+}
+.wrapper{
+	width: 940px;/*设了这个宽度后，它才会居中为什么呢?(但是这个居中看起来也不是很居中)
+	width和min-width不是一回事?*/
+	min-width: 940px;
+    margin:0 auto 30px;
+}
+a {
+	text-decoration: none;
+	color: #333;
+}
+h3,
+p {
+	line-height: 22px;
+}
+h3 {
+	font-size: 16px;
+}
+p {
+	font-size: 14px;
+	color: gray;	
+}
+/*头部样式*/
+header {
+	position: relative;
+	height: 77px;
+	border-bottom: 1px solid #e5e5e5;
+}
+header .logo {
+	float: left;
+	background: url("img/sprit.png") no-repeat 0px -43px ;
+	width: 160px;
+	height: 52px;
+	margin-top: 15px;
+}
+header form {
+	float: left;
+	margin-top: 18px;
+	margin-left: 150px;
+}
+header form input{
+    width: 244px;
+    height: 38px;
+    box-sizing: border-box;
+}
+header form button{
+	width: 42px;
+	height: 38px;
+	border: 0;
+}
+header form .selector-ul {
+	position: absolute;
+	display: none;
+	list-style-type: none;
+	background-color: #e5e5e5;
+
+}
+header form .selector-ul > li {
+	width: 258px;
+	line-height: 30px;
+	cursor: pointer;
+}
+header .selector-ul > li:hover {
+	background-color: #aaa;
+}
+header .user {
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	margin-top: 18px;
+}
+header .user li {
+	display: inline-block;
+	margin-left: 10px;
+}
+/*下面是雪碧图的用法*/
+header .user i{
+	display: block;
+	width: 26px;
+	height: 26px;
+	margin:0 auto;
+	background: url("img/sprit.png");
+}
+header .user .cat-1 i{
+	background-position: -161px -43px;
+}
+header .user .cat-2 i{
+	background-position: -187px -43px;
+}
+header .user .cat-3 i{
+	background-position: -214px -43px;
+}
+header .user a {
+	display: block;
+    margin-top: 10px;
+	font-size: 15px;
+}
+/*导航条*/
+nav {
+	position: relative;
+	line-height: 50px;
+}
+nav .right-area {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+nav .right-area .line {
+	padding-right: 5px;
+	border-right: 1px solid #333;
+}
+/*首页轮播图*/
+/*问题：下面那排的小图怎么居中呢？*/
+#kankan-scroll li{
+	float: left;
+}
+#kankan-scroll {
+	position: relative;	
+	width: 940px;/*单张图片的宽度*/
+    /*	height: 520px;/*高度好像不用设定会被img撑起来的*/
+    margin-bottom: 25px;
+	overflow: hidden;/*使得隐藏另外两张图片的宽度*/
+}
+#kankan-scroll .screen{
+	width: 2817px;/*三张图片总宽度。如果不写这个，轮播图片会有空白间隔*/
+}
+#kankan-scroll .slider {
+	position: absolute;/*相对容器定位*/
+	bottom: 0;
+	width: 919px;  /*小图的背景容器，因为脱离文档流，所以高宽要自设*/
+	height: 80px;
+	margin: 10px 10px 0 10px;
+    background: white;
+    opacity: 0.5;
+}
+#kankan-scroll .slider li {
+	margin: 10px;
+	cursor: pointer;/*光标样式*/
+}
+#kankan-scroll .slider img {
+	width: 100px;/*img必须设定宽度才能变小*/
+}
+#kankan-scroll .slider .on {
+	border: 3px solid #6395ED;
+}
+/*每个栏目标题栏统一格式设定*/
+.box-title h2 {
+	display: inline-block;
+	margin-right: 30px;
+	font-size: 26px;
+}
+.box-title .act{
+	display: inline-block;
+	font-size: 14px;
+	margin-bottom: 15px;
+}
+.box-title .act a {
+	padding: 0 10px;
+	border-right: 1px solid gray;
+}
+.box-title .act a:last-child {
+	border: 0;
+}
+/*栏目左侧可复用的样式*/
+.img-hot,
+.img-hot2 {
+	float: left;
+}
+.img-hot {
+	width: 460px;
+    background-color: #f5f5f5;
+}
+.img-hot img {
+	width: 460px;
+	height: 334px;
+} 
+/*每个栏目小图的统一设定*/
+.wrapper .describe {
+	height: 55px;
+	padding: 10px 14px 0;
+	box-sizing: border-box;
+
+}
+.wrapper .img-list li {
+	float: left;
+	width: 220px;
+	height: 190px;
+	margin: 0 10px 10px 0 ;
+	background-color: #f5f5f5;
+}
+.wrapper .img-list img {
+	width: 220px;
+}
+#kankan-kandian .img-hot2 {
+	width: 463px;  /*看点左侧+右侧+margin一共为940px(页面最小宽度)*/
+	margin-left: 17px; 
+}
+/*电视剧区*/
+#tele-scroll {
+	width: 460px;
+}
+#kankan-teleplay .img-hot {
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 10px;
+}
+#kankan-teleplay .screen img{
+	width: 460px;
+	height: 334px;
+}
+#kankan-teleplay .slider {
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+	padding-bottom: 10px;
+}
+#kankan-teleplay .img-hot li {
+	float: left;
+}
+#kankan-teleplay .img-hot p {
+	position: relative;
+	margin-right: 100px;
+}
+#kankan-teleplay .img-hot span {
+	position: absolute;
+	right: 0;
+}
+#kankan-teleplay .img-hot .screen{
+	width: 1380px;/*图片宽度X3*/
+}
+/*电视剧区轮播复用了大图的轮播。因此只需要写具体的css样式。*/
+#kankan-teleplay .slider li {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: gray;
+	cursor: pointer;	
+	margin-right: 5px;
+}
+#kankan-teleplay .slider .on {
+    background-color: cyan;
+}
+/*电视剧区右侧区域*/
+#kankan-teleplay .img-list,
+#kankan-teleplay aside {
+	float: left;
+	width: 220px;
+	height: 400px;	
+	margin-left: 10px;
+	background-color: #f5f5f5;	
+}
+#kankan-teleplay .box-title {
+	position: relative;
+	height: 50px;
+}
+#kankan-teleplay .box-title h3 {
+	float: left;
+	font-size: 20px;
+}
+#kankan-teleplay .box-title a {
+	float: right;
+}
+#kankan-teleplay .rank .top1 {
+	position: relative;
+	height: 125px;
+}
+#kankan-teleplay .rank .top1 a {
+	display: block;
+}
+#kankan-teleplay .rank .top1-des {
+	position: absolute;
+	bottom: 0;
+}
+#kankan-teleplay .rank .top1 p {
+	color: #fff;
+}
+#kankan-teleplay .rank .top1 span {
+	display: inline-block;
+	width: 40px;
+	line-height: 40px;
+	margin-right: 13px;
+	text-align: center;
+	background-color: #24baf1;
+}
+#kankan-teleplay .rank li {
+	height: 29px;
+}
+#kankan-teleplay .rank li span {
+	display: inline-block;
+	width: 40px;
+	line-height: 40px;
+	margin-right: 13px;
+	text-align: center;
+}
+/*footer底部信息*/
+footer li {
+	display: inline-block;
+	width: 300px;
+	font-size: 14px;	
+	line-height: 28px;
+	text-align: center;
+}
+footer p {
+	margin-top: 50px;
+	text-align: center;
+}
